@@ -1,0 +1,144 @@
+<div class="container">
+
+	<form [ngFormModel]="form">
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="valor_nominal">Valor nominal</label>
+						<input name="valor_nominal" class="form-control" ngControl="valor_nominal">
+
+
+						<p *ngIf="valor_nominal.pending">Fetching data from the server...</p>
+		
+						<div *ngIf="valor_nominal.dirty && !valor_nominal.valid && !valor_nominal.pending">
+							<p *ngIf="valor_nominal.errors.required">Es necesario un valor nominal.</p>
+							<p *ngIf="valor_nominal.errors.isTexto">Solo números</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="tasa_descuento">Tasa de descuento</label>
+						<input name="tasa_descuento" class="form-control" ngControl="tasa_descuento">
+						<div *ngIf="tasa_descuento.dirty && !tasa_descuento.valid && !tasa_descuento.pending">
+							<p *ngIf="tasa_descuento.errors.required">Es necesario un valor nominal.</p>
+							<p *ngIf="tasa_descuento.errors.isTexto">Solo números</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="dias_vencer">Dias por vencer</label>
+						<input name="dias_vencer" class="form-control" ngControl="dias_vencer">
+						<div *ngIf="dias_vencer.dirty && !dias_vencer.valid && !dias_vencer.pending">
+							<p *ngIf="dias_vencer.errors.required">Es necesario un valor nominal.</p>
+							<p *ngIf="dias_vencer.errors.isTexto">Solo números</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="capital">Capital</label>
+						<input name="capital" class="form-control" ngControl="capital">
+						<div *ngIf="capital.dirty && !capital.valid && !capital.pending">
+							<p *ngIf="capital.errors.required">Es necesario un valor nominal.</p>
+							<p *ngIf="capital.errors.isTexto">Solo números</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="precio_bono">Precio del bono</label>
+						<input name="precio_bono" class="form-control" disabled="disabled" [value]="precio_bono">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="cetes_comprar">Cetes a comprar</label>
+						<input name="cetes_comprar" class="form-control" disabled="disabled" [value]="cetes_comprar" >
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="liquidacion_compra">Liquidación de compra</label>
+						<input name="liquidacion_compra" class="form-control" disabled="disabled" [value]="liquidacion_compra">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="saldo_no_invertido">Saldo no invertido</label>
+						<input name="saldo_no_invertido" class="form-control" disabled="disabled" [value]="saldo_no_invertido">
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-md-6">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="liquidacion_venta">Liquidación de venta</label>
+						<input name="liquidacion_venta" class="form-control" disabled="disabled" [value]="liquidacion_venta">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="rendimiento_efectivo">Rendimiento efectivo</label>
+						<input name="rendimiento_efectivo" class="form-control" disabled="disabled" [value]="rendimiento_efectivo">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="utilidad">Utilidad</label>
+						<input name="utilidad" class="form-control" disabled="disabled" [value]="utilidad">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="form-group">
+				<button type="button" class="btn btn-primary" [disabled]="!form.valid" (click)="onCalc()">Calcular</button>
+			</div>
+		</div>
+	</div>
+
+	</form>
+
+</div>
