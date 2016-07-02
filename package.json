@@ -23,6 +23,8 @@
     "ts-loader": "^0.8.2",
     "typescript": "^1.8.10",
     "webpack": "^1.13.1",
-    "zone.js": "^0.6.12"
+    "zone.js": "^0.6.12",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5"
   }
 }
